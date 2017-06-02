@@ -12,8 +12,9 @@
 		Endereço: <input type="text" name="endereco" value="Planaltina" required> <br/>
 		Email: <input type="text" name="email" value="junior@gmail.com" required> <br/>
 		Nascimento: <input type="text" placeholder="Ex: dd/mm/aaaa" pattern="\d{1,2}/\d{1,2}/\d{4}" class="datepicker" name="dataNascimento" ><br/>   
-				 
+				 <br/>
 		<input type="submit" value="Gravar">
-	</form>
+	</form><br/><br>
+	<a href="bemvindo.jsp">Voltar</a>
 </body>
 </html>
