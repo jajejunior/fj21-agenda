@@ -64,6 +64,9 @@ public class AdicionaContatoServlet extends HttpServlet {
 		out.println("<body>");
 		out.println("Contato " + contato.getNome() +
 				" adicionado com sucesso");
+		
+		out.println("<br/><br/>");
+		out.print("<a href='bemvindo.jsp'>Voltar</a>");
 		out.println("</body>");
 		out.println("</html>");
 	}
