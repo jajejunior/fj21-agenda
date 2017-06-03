@@ -22,11 +22,22 @@
 	<c:forEach var="contato" items="${dao.list}">
 		<tr>
 			<!-- Expression language capaz de perceber o getAtributo-->
-			<td>ID: ${contato.id}</td>
-			<td>NOME: ${contato.nome}</td>
-			<td>ENDEREÇO: ${contato.endereco}</td>
-			<td>EMAIL: ${contato.email}</td>
-			<td>NASCIMENTO: ${contato.dataNascimento.time}</td>
+			<td>${contato.id}</td>
+			<td>${contato.nome}</td>
+			<td>${contato.endereco}</td>
+			<td>${contato.email}</td>
+			<td>
+			<c:choose>
+				<c:when test="${not empty contato.email}">
+					<a href=emailto:${contato.email}>${contato.email}</a>
+				</c:when>
+			
+				<c:otherwise>
+					E-mail não informado
+				</c:otherwise>
+			</c:choose>
+			</td>
+			<td>${contato.dataNascimento.time}</td>
 		</tr>
 	
 	</c:forEach>			

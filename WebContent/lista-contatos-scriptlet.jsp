@@ -1,17 +1,24 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+
+
+
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
 <%@page import="java.util.Date"%>
 <%@page import="br.com.caelum.agenda.dao.ContatoDao"%>
 <%@page import="br.com.caelum.agenda.modelo.Contato"%>
 <%@page import="java.text.SimpleDateFormat"%> 
-    
- <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>   
+
+
+<!-- Importando a taglib jstl.Core Use ctrl+space na url-->
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>   
+  
     
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
 <title>Lista de Contatos Scriptlet</title>
 
    <style type="text/css">
@@ -27,12 +34,9 @@
         /*Definido cor das linhas pares*/
         .full_table_list tr:nth-child(even) {background: #F4FBFF;}
          
-        /*Definindo cor das Linhas impáres*/
+        /*Definindo cor das Linhas impÃ¡res*/
         .full_table_list tr:nth-child(odd) {background: #FFFFFF;} 
-        
-        /*.full_table_title tr{background: #FFFFFF; color: red}*/
-     
-	
+        	
 }
                
     </style>
@@ -59,20 +63,23 @@
 	List<Contato> contatos =  dao.getList();
 	for (Contato contato : contatos){
 	%>
-		
-	
-		
 		<tr>
 			<td><%=contato.getId()%></td>
 			<td><%=contato.getNome()%></td>
 			<td><%=contato.getEndereco()%></td>
-			<td><%=contato.getEmail()%></td>
+			<td>
+				<a href="mailto:<%=contato.getEmail()%>?subject=Free chocolate 
+				&body= Procure um de nossos representantes e solicite já o seu 
+				delicioso chocolate."><%=contato.getEmail()%></a>
+			</td>
 			<td><%=sdf.format(contato.getDataNascimento().getTime())%></td>
 		</tr>
 		
 	<%} %>
 	
 	</table>
+	
+	
 	<br/>
 	<a href="bemvindo.jsp">Voltar</a>
 </body>
