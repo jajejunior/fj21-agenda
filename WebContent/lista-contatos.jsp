@@ -12,7 +12,9 @@
 <title>Expression language + JSTL</title>
 </head>
 <body>
-<h3>Lista de contatos:</h3> <br/>
+
+<c:import url="cabecalho.jsp"/>
+<h2>Lista de contatos:</h2> <br/>
 	<!-- Cria o dao (Instancia o POJO)-->
 	<jsp:useBean id="dao" class="br.com.caelum.agenda.dao.ContatoDao"/>
 	
@@ -44,5 +46,6 @@
 	</table>
 	<br/>
 	<a href="bemvindo.jsp">Voltar</a>
+	<c:import url="rodape.jsp"/>
 </body>
 </html>
