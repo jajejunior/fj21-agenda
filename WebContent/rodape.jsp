@@ -9,7 +9,11 @@
 <body><br/>
 <hr align="left" width="1024" size="1" color=black >
 
-<center><img alt="" src="img/imgrodape.png">
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+<center> 
+	<img src="<c:url value="img/imgrodape.png"/>"/>
 </center>
+
 </body>
 </html>

@@ -24,10 +24,11 @@
 	<c:forEach var="contato" items="${dao.list}">
 		<tr>
 			<!-- Expression language capaz de perceber o getAtributo-->
+			
 			<td>${contato.id}</td>
 			<td>${contato.nome}</td>
 			<td>${contato.endereco}</td>
-			<td>${contato.email}</td>
+			<!-- <td>${contato.email}</td> -->
 			<td>
 			<c:choose>
 				<c:when test="${not empty contato.email}">
@@ -39,7 +40,11 @@
 				</c:otherwise>
 			</c:choose>
 			</td>
-			<td>${contato.dataNascimento.time}</td>
+			<!--<td>${contato.dataNascimento.time}</td> foi trocado por:-->
+			<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+			<td><fmt:formatDate value="${contato.dataNascimento.time}" 
+			pattern="dd/MM/aaaa"/></td>
+			
 		</tr>
 	
 	</c:forEach>			
