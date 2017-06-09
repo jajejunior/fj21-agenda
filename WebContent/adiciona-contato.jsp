@@ -27,7 +27,7 @@
 	
 	<form action="adicionaContato" method="get">
 		
-		Nome: <input type="text" name="nome" value="" required> <br/>
+		Nome: <input type="text" name="nome" value="" required > <br/>
 		
 		Endereço: <input type="text" name="endereco" value="" required> <br/>
 		

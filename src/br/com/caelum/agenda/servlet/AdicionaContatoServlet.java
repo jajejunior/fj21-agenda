@@ -1,12 +1,13 @@
 package br.com.caelum.agenda.servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
+//import java.io.PrintWriter;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -29,7 +30,9 @@ public class AdicionaContatoServlet extends HttpServlet {
 					throws IOException, ServletException {
 		
 		// busca o writer
-		PrintWriter out = response.getWriter();
+		//PrintWriter out = response.getWriter();
+		
+		
 		// buscando os parâmetros no request
 		String nome = request.getParameter("nome");
 		String endereco = request.getParameter("endereco");
@@ -47,7 +50,8 @@ public class AdicionaContatoServlet extends HttpServlet {
 			dataNascimento = Calendar.getInstance();
 			dataNascimento.setTime(date);
 		} catch (ParseException e) {
-			out.println("Erro de conversão da data");
+			//out.println("Erro de conversão da data");
+			System.out.println("Erro na conversão da data");
 			return; //para a execução do método
 		}
 		// monta um objeto contato
@@ -59,8 +63,16 @@ public class AdicionaContatoServlet extends HttpServlet {
 		// salva o contato
 		ContatoDao dao = new ContatoDao();
 		dao.adiciona(contato);
+		
+		//Redireciona para outro recurso(outra servlet ou um jsp)
+		RequestDispatcher rd = request
+				.getRequestDispatcher("/contato-adicionado.jsp");
+		rd.forward(request,response);
+	
+		
 		// imprime o nome do contato que foi adicionado
-		out.println("<html>");
+		
+		/*out.println("<html>");
 		out.println("<body>");
 		out.println("Contato " + contato.getNome() +
 				" adicionado com sucesso");
@@ -68,7 +80,7 @@ public class AdicionaContatoServlet extends HttpServlet {
 		out.println("<br/><br/>");
 		out.print("<a href='bemvindo.jsp'>Voltar</a>");
 		out.println("</body>");
-		out.println("</html>");
+		out.println("</html>");*/
 	}
 }
 		

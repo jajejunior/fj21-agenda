@@ -28,7 +28,8 @@
 	
 	<a href="adiciona-contato.jsp">Adicionar com Servlet</a><br/>
 	<a href="lista-contatos-scriptlet.jsp">Listar com Scriptlet</a><br/>
-	<a href="lista-contatos.jsp">Listar com JSTL e EL</a>
+	<a href="lista-contatos.jsp">Listar com JSTL e EL</a><br/>
+	<a href="lista-contatos-displaytag.jsp">Listar com DisplayTag</a>
 	<br/>
 	<c:import url="rodape.jsp"/>
 </body>
