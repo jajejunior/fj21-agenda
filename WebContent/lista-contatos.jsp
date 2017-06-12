@@ -45,12 +45,15 @@
 			<td><fmt:formatDate value="${contato.dataNascimento.time}" 
 			pattern="dd/MM/aaaa"/></td>
 			
-		</tr>
+			<!-- Coluna de remoção -->
+			<td><a href="mvc?logica=RemoveContatoLogic&id=${contato.id}"><img src="img/imgremover.png"> </a></td>
+			
+		</tr>   
 	
 	</c:forEach>			
 	</table>
 	<br/>
-	<a href="bemvindo.jsp">Voltar</a>
+	<a href="bemvindo.jsp"><img src="img/imghome.png"></a>
 	<c:import url="rodape.jsp"/>
 </body>
 </html>

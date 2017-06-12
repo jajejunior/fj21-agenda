@@ -39,7 +39,7 @@
 				 <br/>
 		<input type="submit" value="Gravar">
 	</form><br/><br>
-	<a href="bemvindo.jsp">Voltar</a>
+	<a href="bemvindo.jsp"><img src="img/imghome.png"></a>
 	
 	<c:import url="rodape.jsp"/>
 </body>

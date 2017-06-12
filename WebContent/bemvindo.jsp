@@ -25,10 +25,18 @@
 	<%= desenvolvido %>
 	<% --%>
 		<%System.out.print("Tudo foi executado"); %>
-	
-	<a href="adiciona-contato.jsp">Adicionar com Servlet</a><br/>
-	<a href="lista-contatos-scriptlet.jsp">Listar com Scriptlet</a><br/>
-	<a href="lista-contatos.jsp">Listar com JSTL e EL</a><br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<center>
+		<a href="adiciona-contato.jsp"><img src="img/imgadicionar.jpg"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="lista-contatos-scriptlet.jsp"><img src="img/imglistar.jpg"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="lista-contatos.jsp"><img src="img/imgremover.jpg"></a>
+	</center>
+	<br/>
+	<br/>
+	<h3>Outros...</h3>
 	<a href="lista-contatos-displaytag.jsp">Listar com DisplayTag</a>
 	<br/>
 	<c:import url="rodape.jsp"/>

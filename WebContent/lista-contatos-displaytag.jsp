@@ -25,10 +25,11 @@
 	<display:column title="Email" property="email" autolink="true" />
 	<display:column title="Endereço" property="endereco" />
 	<display:column title="Nascimento" property="dataNascimento.time" format="{0,date,dd/MM/yyyy}" />
+	
 	</display:table >
 <br/><br/>
 
-<a href="bemvindo.jsp">Voltar</a>
+<a href="bemvindo.jsp"><img src="img/imghome.png"></a>
 <c:import url="rodape.jsp"/>
 	
 </body>

@@ -80,6 +80,21 @@ public class ContatoDao {
 		}
 	}
 
-	
+	public void exclui(Contato contato){
+		
+		String sql = "delete from contatos where id=?";
+		try {
+			PreparedStatement stmt = connection.prepareStatement(sql);
+			//pega o id que já foi setado no contato e atriui ao caracter coringa
+			stmt.setLong(1, contato.getId());
+			stmt.execute();
+			stmt.close();
+			System.out.println("Dados removidos com sucesso");
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new RuntimeException(e);
+		}
+	}
 	
 }
