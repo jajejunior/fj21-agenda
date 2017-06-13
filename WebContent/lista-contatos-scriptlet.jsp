@@ -60,8 +60,6 @@
 	List<Contato> contatos =  dao.getList();
 	for (Contato contato : contatos){
 	%>
-	
-	
 		<tr>
 			<td><%=contato.getId()%></td>
 			<td><%=contato.getNome()%></td>
@@ -72,9 +70,6 @@
 				delicioso chocolate."><%=contato.getEmail()%></a>
 			</td>
 			<td><%=sdf.format(contato.getDataNascimento().getTime())%></td>
-			
-		
-		
 		</tr>
 		
 	<%} %>

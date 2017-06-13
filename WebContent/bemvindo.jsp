@@ -29,11 +29,13 @@
 	<br/>
 	<br/>
 	<br/>
-	<center>
+	<div align="center">
+	
 		<a href="adiciona-contato.jsp"><img src="img/imgadicionar.jpg"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		<a href="lista-contatos-scriptlet.jsp"><img src="img/imglistar.jpg"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		<a href="lista-contatos.jsp"><img src="img/imgremover.jpg"></a>
-	</center>
+		<a href="http://localhost:8080/fj21-agenda/mvc?logica=ListaContatosLogic"><img src="img/imgremover.jpg"></a>
+	
+	</div>
 	<br/>
 	<br/>
 	<h3>Outros...</h3>

@@ -14,14 +14,28 @@
 <body>
 
 <c:import url="cabecalho.jsp"/>
-<h2>Lista de contatos:</h2> <br/>
-	<!-- Cria o dao (Instancia o POJO)-->
-	<jsp:useBean id="dao" class="br.com.caelum.agenda.dao.ContatoDao"/>
+ <br/>
+	
 	
 	<table>
-	<!-- taglib para percorre contatos montando as linhas da tabela -->
-	<!-- se o método for getLista aqui no el tem que ser chamado por lista -->
-	<c:forEach var="contato" items="${dao.list}">
+	<!-- cria celulas acima da taela possiilitando dar um nome para as colunas -->
+	<caption></caption>
+   	<thead>
+      <tr>
+      	<td><b>ID</b></td>
+      	<td><b>NOME</b></td>
+      	<td><b>ENDEREÇO</b></td>
+      	<td><b>EMAIL</b></td>
+      	<td><b>NASCIMENTO</b></td>
+      </tr>
+   	</thead>
+	
+	
+	
+	
+	<!-- usa a lista que foi colocada na request em ListaContatosLogic -->
+	
+	<c:forEach var="contato" items="${contatos}">
 		<tr>
 			<!-- Expression language capaz de perceber o getAtributo-->
 			
@@ -43,7 +57,7 @@
 			<!--<td>${contato.dataNascimento.time}</td> foi trocado por:-->
 			<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 			<td><fmt:formatDate value="${contato.dataNascimento.time}" 
-			pattern="dd/MM/aaaa"/></td>
+			pattern="dd/MM/yyyy"/></td>
 			
 			<!-- Coluna de remoção -->
 			<td><a href="mvc?logica=RemoveContatoLogic&id=${contato.id}"><img src="img/imgremover.png"> </a></td>

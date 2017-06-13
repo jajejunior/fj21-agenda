@@ -19,8 +19,10 @@ public class RemoveContatoLogic implements Logica {
 		dao.exclui(contato);
 		System.out.println("Excluindo Contato");
 		
-		
-		return "lista-contatos.jsp";
+/*
+ * Aqui eu não compreendi o porquê que eu não posso mais chamar o jsp diretamente
+ * */		
+		return "mvc?logica=ListaContatosLogic";
 	}
 
 }
