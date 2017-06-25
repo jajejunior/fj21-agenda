@@ -1,9 +1,9 @@
 package br.com.caelum.agenda.dao;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.Date;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -61,11 +61,12 @@ public class ContatoDao {
 				contato.setNome(rs.getString("nome"));
 				contato.setEndereco(rs.getString("endereco"));
 				contato.setEmail(rs.getString("email"));
-				//Montando a sql.data com util.calendar
 				
+				//Montando a sql.data com util.calendar
 				Calendar data = Calendar.getInstance();
 				//Seta a data com o valor do ponteiro
 				data.setTime(rs.getDate("dataNascimento"));
+				
 				//Seta o contato com a data calendar
 				contato.setDataNascimento(data);
 				//Adiciona o objeto na lista
@@ -94,6 +95,31 @@ public class ContatoDao {
 		} catch (SQLException e) {
 			e.printStackTrace();
 			throw new RuntimeException(e);
+		}
+	}
+	
+	public void altera(Contato contato){
+		//Função de alterar
+		String sql = "update contatos set nome=?, endereco=?, email=?, dataNascimento=? where id=?";
+		
+		try {
+			PreparedStatement stmt = connection.prepareStatement(sql);
+			
+			stmt.setString(1, contato.getNome());
+			stmt.setString(2, contato.getEndereco());
+			stmt.setString(3, contato.getEmail());
+			//Preparando a data
+			stmt.setDate(4, new Date(contato.getDataNascimento().getTimeInMillis()));
+			stmt.setLong(5, contato.getId());
+			
+			stmt.execute();
+			stmt.close();
+			System.out.println("Contato alterado com sucesso");
+			
+		} catch (SQLException e) {
+			System.out.println("Erro ao alterar ");
+			e.printStackTrace();
+			throw new RuntimeException("Erro no DAO ao excluir"+e);
 		}
 	}
 	

@@ -66,7 +66,7 @@ public class AdicionaContatoServlet extends HttpServlet {
 		
 		//Define um objeto que recebe pedidos do cliente e os envia a qualquer recurso(outra servlet ou um jsp)
 		RequestDispatcher rd = request
-				.getRequestDispatcher("/contato-adicionado.jsp");
+				.getRequestDispatcher("contato-adicionado.jsp");
 		rd.forward(request,response);
 	
 		

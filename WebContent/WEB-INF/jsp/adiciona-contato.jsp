@@ -25,10 +25,16 @@
 
 	<h2>Formulário de cadastro:</h2> <br/>
 	
-	<form action="adicionaContato" method="get">
+	
+	
+	
+	
+	
+	
+	<form action="mvc" method="get">
 		
 		Nome: <input type="text" name="nome" value="" required > <br/>
-		
+	
 		Endereço: <input type="text" name="endereco" value="" required> <br/>
 		
 		Email: <input type="text" name="email" value="" placeholder="Ex: email@email.com" required> <br/>
@@ -37,8 +43,13 @@
 		
 		<!-- Nascimento: <input type="text" placeholder="Ex: dd/mm/aaaa" pattern="\d{1,2}/\d{1,2}/\d{4}" class="datepicker" name="dataNascimento" ><br/>-->   
 				 <br/>
+				 
+		<input type="hidden" name="logica" value="AdicionaContatoLogic"/>		 
 		<input type="submit" value="Gravar">
+	
 	</form><br/><br>
+	
+	
 	<a href="bemvindo.jsp"><img src="img/imghome.png"></a>
 	
 	<c:import url="rodape.jsp"/>
