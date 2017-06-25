@@ -77,7 +77,7 @@
 	</table>
 	
 	<br/>
-	<a href="bemvindo.jsp"><img src="img/imghome.png"></a>
+	<a href="mvc?logica=BemVindoLogic"><img src="img/imghome.png"></a>
 	<c:import url="rodape.jsp"/>
 </body>
 </html>
