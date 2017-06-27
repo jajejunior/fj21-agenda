@@ -1,5 +1,8 @@
 package br.com.caelum.agenda.testes;
-
+/**
+ * @author Junior
+ * @version 1.0
+ * */
 import java.util.Calendar;
 import br.com.caelum.agenda.dao.ContatoDao;
 import br.com.caelum.agenda.modelo.Contato;

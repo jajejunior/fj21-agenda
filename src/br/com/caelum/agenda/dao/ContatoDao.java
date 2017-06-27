@@ -1,5 +1,8 @@
 package br.com.caelum.agenda.dao;
-
+/**
+ * @author Junior
+ * @version 1.0
+ * */
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -47,32 +50,22 @@ public class ContatoDao {
 		
 		List<Contato> contatoList = new ArrayList<>();
 		try {
-			//Cria uma instrução sql contendo o comando sql
 			String sql = "select * from contatos";
-			//Prepara a instrução junto com a conexão
 			PreparedStatement stmt = this.connection.prepareStatement(sql);
-			//Cria um ponteiro junto com o stmt
 			ResultSet rs = stmt.executeQuery();
-			//Percorre os registros
 			while(rs.next()){
 				Contato contato = new Contato();
-				//Seta o objeto com o valor que vem do rs
 				contato.setId(rs.getLong("id"));
 				contato.setNome(rs.getString("nome"));
 				contato.setEndereco(rs.getString("endereco"));
 				contato.setEmail(rs.getString("email"));
 				
-				//Montando a sql.data com util.calendar
 				Calendar data = Calendar.getInstance();
-				//Seta a data com o valor do ponteiro
 				data.setTime(rs.getDate("dataNascimento"));
 				
-				//Seta o contato com a data calendar
 				contato.setDataNascimento(data);
-				//Adiciona o objeto na lista
 				contatoList.add(contato);
 			}
-			//Fecha tudo e retorna a lista
 			stmt.close();
 			rs.close();
 			return contatoList;
@@ -99,7 +92,6 @@ public class ContatoDao {
 	}
 	
 	public void altera(Contato contato){
-		//Função de alterar
 		String sql = "update contatos set nome=?, endereco=?, email=?, dataNascimento=? where id=?";
 		
 		try {
@@ -122,5 +114,4 @@ public class ContatoDao {
 			throw new RuntimeException("Erro no DAO ao excluir"+e);
 		}
 	}
-	
 }

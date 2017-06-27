@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-	Página da nossa primeira lógica
+	Página da nossa primeira lógica<br/>
+	<a href="mvc?logica=BemVindoLogic"><img src="img/imghome.png"></a>
+	
 </body>
 </html>

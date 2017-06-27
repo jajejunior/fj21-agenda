@@ -1,5 +1,8 @@
 package br.com.caelum.agenda;
-
+/**
+ * @author Junior
+ * @version 1.0
+ * */
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;

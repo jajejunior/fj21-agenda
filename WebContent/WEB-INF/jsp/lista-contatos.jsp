@@ -37,7 +37,7 @@
 	
 	<c:forEach var="contato" items="${contatos}">
 		<tr>
-			<!-- Expression language capaz de perceber o getAtributo-->
+			<!-- Expression language capaz de perceber atributos-->
 			
 			<td>${contato.id}</td>
 			<td>${contato.nome}</td>
@@ -59,9 +59,20 @@
 			<td><fmt:formatDate value="${contato.dataNascimento.time}" 
 			pattern="dd/MM/yyyy"/></td>
 			
-			<!-- Coluna de remoção -->
-			<td><a href="mvc?logica=RemoveContatoLogic&id=${contato.id}"><img src="img/imgremover.png"> </a></td>
 			
+			
+			
+			
+			
+			<td><a href="mvc?logica=LinkAdicionaContatoLogic"><img src="img/btnadicionar.fw.png"> </a></td>
+			<td><a href="mvc?logica=LinkAlteraContatoLogic&id=${contato.id}&nome=${contato.nome}&email=${contato.email}&endereco=${contato.endereco}&dataNascimento=${contato.dataNascimento}"><img src="img/btnalterar.fw.png"> </a></td>
+			
+			<td><a href="mvc?logica=RemoveContatoLogic&id=${contato.id}"><img src="img/btnremover.fw.png"> </a></td>
+		
+		
+		
+		
+		
 		</tr>   
 	
 	</c:forEach>			

@@ -8,6 +8,8 @@
 </head>
 <body>
 Testando seus parametros<br/>
-Idade: ${param.idade}.
+Idade: ${param.idade}.<br/>
+<a href="mvc?logica=BemVindoLogic"><img src="img/imghome.png"></a>
+	
 </body>
 </html>

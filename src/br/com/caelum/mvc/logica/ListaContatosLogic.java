@@ -1,5 +1,8 @@
 package br.com.caelum.mvc.logica;
-
+/**
+ * @author Junior
+ * @version 1.0
+ * */
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -15,7 +18,7 @@ public class ListaContatosLogic implements Logica {
 		
 		List<Contato> contatos = new ContatoDao().getList();
 		request.setAttribute("contatos", contatos);
-		RequestDispatcher rd = request.getRequestDispatcher("lista-contatos.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("lista-contatos-scriptlet.jsp");
 		rd.forward(request, response);
 	}           
 }

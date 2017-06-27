@@ -1,5 +1,8 @@
 package br.com.caelum.agenda.testes;
-
+/**
+ * @author Junior
+ * @version 1.0
+ * */
 import java.sql.Connection;
 import java.sql.SQLException;
 

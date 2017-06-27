@@ -41,7 +41,6 @@
 <body>
 
 	<c:import url="cabecalho.jsp"/>
-	<h2>Lista de contatos:</h2> <br/>
 	<table class="full_table_list" rules="cols">
 		<thead >
       		<tr >
@@ -70,6 +69,14 @@
 				delicioso chocolate."><%=contato.getEmail()%></a>
 			</td>
 			<td><%=sdf.format(contato.getDataNascimento().getTime())%></td>
+		
+		
+		
+			<td><a href="mvc?logica=LinkAdicionaContatoLogic"><img src="img/btnadicionar.fw.png"> </a></td>
+			<td><a href="mvc?logica=LinkAlteraContatoLogic&id=<%=contato.getId()%>&nome=<%=contato.getNome()%>&email=<%=contato.getEmail()%>&endereco=<%=contato.getEndereco()%>&dataNascimento=<%=sdf.format(contato.getDataNascimento().getTime())%>"><img src="img/btnalterar.fw.png"> </a></td>
+			
+			<td><a href="mvc?logica=RemoveContatoLogic&id=<%=contato.getId()%>"><img src="img/btnremover.fw.png"> </a></td>
+		
 		</tr>
 		
 	<%} %>

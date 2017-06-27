@@ -1,5 +1,8 @@
 package br.com.caelum.mvc.servlet;
-
+/**
+ * @author Junior
+ * @version 1.0
+ * */
 import java.io.IOException;
 
 import javax.servlet.ServletException;
@@ -9,10 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.com.caelum.mvc.logica.Logica;
-/*O valor do parametro "logica" está sendo passado na URL
- * 
- * http://localhost:8080/fj21-agenda/mvc?logica=PrimeiraLogica
- * */
+
 @WebServlet("/mvc")
 public class ControllerServlet extends HttpServlet {
 	

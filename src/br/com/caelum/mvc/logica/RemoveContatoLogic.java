@@ -1,5 +1,8 @@
 package br.com.caelum.mvc.logica;
-
+/**
+ * @author Junior
+ * @version 1.0
+ * */
 import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -9,7 +12,6 @@ import br.com.caelum.agenda.modelo.Contato;
 
 public class RemoveContatoLogic implements Logica {
 
-	@Override
 	public void executa(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
 		long id = Long.parseLong(request.getParameter("id"));

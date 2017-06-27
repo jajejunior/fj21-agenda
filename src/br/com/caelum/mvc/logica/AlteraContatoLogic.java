@@ -14,25 +14,27 @@ import javax.servlet.http.HttpServletResponse;
 import br.com.caelum.agenda.dao.ContatoDao;
 import br.com.caelum.agenda.modelo.Contato;
 
-public class AdicionaContatoLogic implements Logica {
+public class AlteraContatoLogic implements Logica {
 
 	@Override
 	public void executa(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		
+		long id = Long.parseLong(request.getParameter("id"));
+		String dataEmTexto = request.getParameter("dataNascimento");
+		Date date = new SimpleDateFormat("dd/MM/yyyy").parse(dataEmTexto);
+		Calendar dataNascimento = Calendar.getInstance();
+		dataNascimento.setTime(date);
+		
 		Contato contato = new Contato();
-		contato.setNome(request.getParameter("nome"));
+		contato.setId(id);
 		contato.setEmail(request.getParameter("email"));
 		contato.setEndereco(request.getParameter("endereco"));
+		contato.setDataNascimento(dataNascimento);
 		
-		String dataEmTexto = request.getParameter("dataNascimento");
-	    Date date = new SimpleDateFormat("dd/MM/yyyy").parse(dataEmTexto);
-	    Calendar dataNascimento = Calendar.getInstance();
-	    dataNascimento.setTime(date);
-
-	    contato.setDataNascimento(dataNascimento);
-	    ContatoDao dao = new ContatoDao();
-	    dao.adiciona(contato);
-	    
-	    RequestDispatcher rd = request.getRequestDispatcher("contato-adicionado.jsp");
-	    rd.forward(request, response);
+		ContatoDao dao = new ContatoDao();
+		dao.altera(contato);
+		
+		RequestDispatcher rd = request.getRequestDispatcher("/contato-alterado.jsp");
+		rd.forward(request, response);
 	}
 }

@@ -39,7 +39,13 @@
 	<br/>
 	<br/>
 	<h3>Outros...</h3>
-	<a href="lista-contatos-displaytag.jsp">Listar com DisplayTag</a>
+	<a href="lista-contatos-displaytag.jsp">Listar com DisplayTag</a><br/>
+	<a href="mvc?logica=LinkAlteraContatoLogic">Altera</a><br/>
+	<a href="contador.html">Contador</a><br/>
+	<a href="digita-idade.jsp">Digita Idade</a><br/>
+	<a href="mostra-idade.jsp">Mostra Idade</a><br/>
+	<a href="primeira-logica.jsp">Primeira Logica</a><br/>
+	<a href="testes.jsp">Testes</a>
 	<br/>
 	<c:import url="rodape.jsp"/>
 </body>

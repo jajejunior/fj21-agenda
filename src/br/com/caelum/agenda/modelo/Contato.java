@@ -4,7 +4,6 @@ import java.util.Calendar;
 
 public class Contato {
 	
-
 	private Long id;
 	private String nome;
 	private String email;
@@ -40,7 +39,5 @@ public class Contato {
 	}
 	public void setDataNascimento(Calendar dataNascimento) {
 		this.dataNascimento = dataNascimento;
-	}
-	
-	
+	}	
 }

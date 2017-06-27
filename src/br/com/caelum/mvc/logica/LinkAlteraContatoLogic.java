@@ -7,10 +7,11 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class BemVindoLogic implements Logica {
+public class LinkAlteraContatoLogic implements Logica {
 
 	public void executa(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		RequestDispatcher rd = request.getRequestDispatcher("/bem-vindo.jsp");
+		
+		RequestDispatcher rd = request.getRequestDispatcher("/altera-contato.jsp");
 		rd.forward(request, response);
 	}
 }
